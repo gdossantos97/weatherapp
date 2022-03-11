@@ -9,17 +9,17 @@ function App() {
 
 
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=085c3e3f13130f3f56e53aa88093eeeb`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=085c3e3f13130f3f56e53aa88093eeeb` // needs location, units, and apikey 
 
 
- const searchLocation = (event) => {
-    if (event.key === 'Enter') {
+ const searchLocation = (event) => {       //This is how to get information from an API 
+    if (event.key === 'Enter') {           // this if statement makes it so that when you type and hit enter the screen will refresh and give you new data
       axios.get(url).then((response) => {
         setData(response.data)
         console.log(response.data)
       })
 
-      setLocation('')
+      setLocation('') // we set location as empty string because it will be our input 
     }
   }
 
